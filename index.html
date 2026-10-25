@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080909">
+<meta name="description" content="Ayoub — Direct-Response Copywriter specializing in landing pages, email marketing, and creative ad strategy for B2B and B2C brands.">
+<title>Ayoub | Direct-Response Copywriter</title>
+
+<style>
+:root {
+  --bg: #080909;
+  --panel: rgba(255,255,255,0.055);
+  --border: rgba(255,255,255,0.14);
+  --white: #f5f5f5;
+  --muted: #a6a6aa;
+  --accent: #c9a87c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+.container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
+
+/* BACKGROUND */
+
+.background-glow {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 80% 15%,
+      rgba(151,133,109,.14), transparent 42%),
+    radial-gradient(ellipse at 10% 70%,
+      rgba(90,90,110,.10), transparent 45%),
+    #080909;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .10;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E");
+}
+
+/* NAVIGATION */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8,9,9,.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+.nav {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #c4c4c4;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  transition: color .25s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.menu-btn {
+  display: none;
+  color: white;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 7px 12px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 670px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 90px 0 85px;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(201,168,124,.45);
+  border-radius: 40px;
+  padding: 9px 17px;
+  color: #dfc9aa;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+}
+
+h1 {
+  font-size: clamp(54px, 9vw, 105px);
+  line-height: .99;
+  letter-spacing: -5px;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
+h1 span {
+  color: var(--accent);
+}
+
+.hero-description {
+  color: #bdbdc1;
+  font-size: clamp(15px, 2vw, 19px);
+  max-width: 660px;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-bottom: 45px;
+}
+
+.btn {
+  min-height: 48px;
+  padding: 13px 22px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: .25s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: #101010;
+  background: var(--white);
+  border-color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  color: white;
+  background: rgba(255,255,255,.025);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.hero-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.hero-bottom span::before {
+  content: "✦";
+  color: var(--accent);
+  margin-right: 8px;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+  padding: 95px 0;
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+
+.section-label {
+  display: block;
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 13px;
+}
+
+.section-title {
+  font-size: clamp(33px, 5vw, 53px);
+  letter-spacing: -1.7px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.section-intro {
+  color: var(--muted);
+  max-width: 650px;
+  margin-bottom: 42px;
+}
+
+/* GLASS CARDS */
+
+.glass-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.glass-card {
+  position: relative;
+  overflow: hidden;
+  padding: 30px;
+  min-height: 245px;
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,.085),
+    rgba(255,255,255,.018)
+  );
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: transform .3s, border-color .3s;
+}
+
+.glass-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201,168,124,.6);
+}
+
+.card-number {
+  color: var(--accent);
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.glass-card h3 {
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.glass-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ABOUT */
+
+.about-layout {
+  display: grid;
+  grid-template-columns: .85fr 1.4fr;
+  gap: 55px;
+  align-items: start;
+}
+
+.about-side {
+  position: sticky;
+  top: 115px;
+}
+
+.about-copy h3 {
+  font-size: 22px;
+  margin: 35px 0 12px;
+}
+
+.about-copy h3:first-child {
+  margin-top: 0;
+}
+
+.about-copy p,
+.about-copy li {
+  color: #b8b8bd;
+  font-size: 15px;
+}
+
+.quote {
+  margin: 24px 0;
+  padding: 23px;
+  border-left: 2px solid var(--accent);
+  background: rgba(201,168,124,.055);
+  color: #e6d3b9;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.about-copy ul,
+.about-copy ol {
+  padding-left: 22px;
+  margin: 14px 0 25px;
+}
+
+.about-copy li {
+  margin-bottom: 13px;
+  padding-left: 5px;
+}
+
+.about-copy li::marker {
+  color: var(--accent);
+}
+
+.highlight {
+  color: var(--white);
+  font-weight: 700;
+}
+
+/* PORTFOLIO */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.portfolio-card {
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 27px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  transition: .3s ease;
+}
+
+.portfolio-card:hover {
+  background: rgba(255,255,255,.085);
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.portfolio-card .category {
+  color: var(--accent);
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.portfolio-card h3 {
+  font-size: 23px;
+  margin: 17px 0 10px;
+}
+
+.portfolio-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.portfolio-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.portfolio-link span:last-child {
+  color: var(--accent);
+  font-size: 20px;
+}
+
+/* CONTACT */
+
+.contact-box {
+  padding: clamp(28px, 6vw, 65px);
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background:
+    radial-gradient(ellipse at top,
+      rgba(201,168,124,.10), transparent 65%),
+    rgba(255,255,255,.025);
+}
+
+.contact-box .section-title {
+  max-width: 680px;
+  margin: 0 auto 20px;
+}
+
+.contact-box p {
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.contact-details {
+  margin-top: 30px;
+  color: var(--muted);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+/* FOOTER */
+
+footer {
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding: 28px 0;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.footer-inner a:hover {
+  color: var(--accent);
+}
+
+/* ANIMATION */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+  .nav {
+    min-height: 68px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    padding: 22px 5%;
+    background: rgba(8,9,9,.98);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 100px 0 75px;
+  }
+
+  h1 {
+    letter-spacing: -3px;
+    font-size: clamp(49px, 13vw, 76px);
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 70px 0;
+  }
+
+  .glass-grid,
+  .portfolio-grid,
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .glass-card {
+    min-height: 190px;
+  }
+
+  .about-layout {
+    gap: 35px;
+  }
+
+  .about-side {
+    position: static;
+  }
+
+  .portfolio-card {
+    min-height: 190px;
+  }
+
+  .hero-bottom {
+    gap: 13px;
+  }
+
+  .btn {
+    font-size: 10px;
+    padding: 12px 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="background-glow"></div>
+<div class="noise"></div>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="logo">AYOUB<span>.</span></a>
+
+    <button class="menu-btn" id="menuBtn"
+      aria-label="Open navigation menu"
+      aria-expanded="false">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">HOME</a>
+      <a href="#about">ABOUT ME</a>
+      <a href="#portfolio">PORTFOLIO</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content reveal">
+      <div class="eyebrow">Direct-Response Copywriter</div>
+
+      <h1>Words That<br><span>Drive Action.</span></h1>
+
+      <p class="hero-description">
+        I turn customer psychology into persuasive landing pages,
+        email campaigns, and creative ad strategies that help
+        B2B and B2C brands turn attention into action.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">
+          Let's Talk ↗
+        </a>
+
+        <a class="btn btn-outline" href="#about">
+          About Me
+        </a>
+
+        <a class="btn btn-outline" href="#portfolio">
+          View Portfolio
+        </a>
+      </div>
+
+      <div class="hero-bottom">
+        <span>Landing Pages</span>
+        <span>Email Marketing</span>
+        <span>Creative Ad Strategy</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE GLASS CARDS -->
+<section id="expertise">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">What I Do</span>
+      <h2 class="section-title">Strategy Before Words.</h2>
+      <p class="section-intro">
+        Every message starts with understanding the audience,
+        identifying the right angle, and building a reason to act.
+      </p>
+    </div>
+
+    <div class="glass-grid">
+      <article class="glass-card reveal">
+        <div class="card-number">01 / STRATEGY</div>
+        <h3>Landing Pages</h3>
+        <p>
+          Clear positioning, compelling offers, and persuasive
+          page structure designed to move prospects toward action.
+        </p>
+      </article>
+
+      <article class="glass-card reveal">
+        <div class="card-number">02 / RETENTION</div>
+        <h3>Email Marketing</h3>
+        <p>
+          Strategic email sequences that build trust, address
+          objections, and guide subscribers toward a purchase.
+        </p>
+      </article>
+
+      <article class="glass-card reveal">
+        <div class="card-number">03 / ACQUISITION</div>
+        <h3>Creative Ad Strategy</h3>
+        <p>
+          Research-driven hooks, angles, and Meta Ads copy
+          built around audience psychology and measurable goals.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container about-layout">
+
+    <div class="about-side reveal">
+      <span class="section-label">The Person Behind The Copy</span>
+      <h2 class="section-title">About<br>Ayoub<span style="color:var(--accent)">.</span></h2>
+      <p class="section-intro">
+        Psychology. Research. Persuasion. Performance.
+      </p>
+      <a href="#contact" class="btn btn-outline">Work With Me ↗</a>
+    </div>
+
+    <div class="about-copy reveal">
+      <h3>About Me</h3>
+
+      <p>
+        Hi, I’m Ayoub — a Direct-Response Copywriter specializing
+        in Landing Pages, Email Marketing, and Creative Ad Strategy
+        for B2B &amp; B2C brands.
+      </p>
+
+      <h3>My Core Philosophy</h3>
+
+      <div class="quote">
+        "Copywriting doesn’t create desire; it channels pre-existing desires."
+      </div>
+
+      <p>
+        An average writer in a starving market will always sell more
+        than a genius writer in a saturated market. My job isn't to
+        force people to buy — it's to align your offer with the exact
+        stage of awareness your audience is in.
+      </p>
+
+      <h3>Why Work With Me?</h3>
+
+      <p>
+        Most copywriters just write words and leave. As someone with
+        hands-on experience running Meta Ads from scratch and building
+        ad creatives, I look at copy through a performance lens:
+      </p>
+
+      <ul>
+        <li>Lowering CPC &amp; CPA</li>
+        <li>Maximizing ROI &amp; Conversion Rates</li>
+        <li>Matching the exact awareness level of your prospect</li>
+      </ul>
+
+      <p>
+        I divide your target market into 4 stages of awareness:
+      </p>
+
+      <ul>
+        <li>
+          <span class="highlight">Unaware:</span>
+          Completely oblivious to the problem.
+        </li>
+        <li>
+          <span class="highlight">Problem-Aware:</span>
+          Knows the pain, but not the solution.
+        </li>
+        <li>
+          <span class="highlight">Product-Aware:</span>
+          Knows what you sell, but is hesitating.
+        </li>
+        <li>
+          <span class="highlight">Most Aware:</span>
+          Ready to buy, just waiting for the right nudge.
+        </li>
+      </ul>
+
+      <p>
+        By mapping the first line of your copy directly to where
+        your reader stands, we capture attention and create a more
+        relevant path from click to conversion.
+      </p>
+
+      <h3>My 4-Step High-Converting Copy Process</h3>
+
+      <ol>
+        <li>
+          <span class="highlight">Deep Audience Research</span><br>
+          "If you sell to everyone, you sell to nobody."
+          I deep-dive into your target audience's desires, behaviors,
+          pain points, and buying psychology.
+        </li>
+
+        <li>
+          <span class="highlight">Angle &amp; Data Audit</span><br>
+          Analyzing past copy and performance metrics to identify
+          hidden weaknesses, common objections, and core product
+          features to polish.
+        </li>
+
+        <li>
+          <span class="highlight">Drafting 7 Distinct Angles</span><br>
+          I develop seven different copy variations during focused
+          work sessions, exploring multiple ways to communicate the
+          offer and connect with the right audience.
+        </li>
+
+        <li>
+          <span class="highlight">Execution &amp; Optimization</span><br>
+          Turning winning angles into landing pages, emails, and
+          ad creatives designed to support measurable growth.
+        </li>
+      </ol>
+
+      <a class="btn btn-primary" href="#portfolio">
+        Explore My Work ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Selected Work</span>
+      <h2 class="section-title">The Portfolio.</h2>
+      <p class="section-intro">
+        Explore my work across real estate investment, B2B,
+        B2C, and email marketing.
+      </p>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <a class="portfolio-card reveal"
+         href="https://fixcores.com/real-estate-investment-copy"
+         target="_blank" rel="noopener noreferrer">
+        <div>
+          <div class="category">01 / Real Estate</div>
+          <h3>Real Estate Investment Copy</h3>
+          <p>
+            Strategic messaging for property investment
+            opportunities and high-value real estate offers.
+          </p>
+        </div>
+        <div class="portfolio-link">
+          <span>View Project</span><span>↗</span>
+        </div>
+      </a>
+
+      <a class="portfolio-card reveal"
+         href="https://fixcores.com/b2b"
+         target="_blank" rel="noopener noreferrer">
+        <div>
+          <div class="category">02 / Business To Business</div>
+          <h3>B2B Copywriting</h3>
+          <p>
+            Persuasive messaging designed to connect with
+            business decision-makers and communicate value.
+          </p>
+        </div>
+        <div class="portfolio-link">
+          <span>View Project</span><span>↗</span>
+        </div>
+      </a>
+
+      <a class="portfolio-card reveal"
+         href="https://fixcores.com/b2b"
+         target="_blank" rel="noopener noreferrer">
+        <div>
+          <div class="category">03 / Business To Consumer</div>
+          <h3>B2C Copywriting</h3>
+          <p>
+            Customer-focused copy built around buying motivations,
+            objections, benefits, and emotional triggers.
+          </p>
+        </div>
+        <div class="portfolio-link">
+          <span>View Project</span><span>↗</span>
+        </div>
+      </a>
+
+      <a class="portfolio-card reveal"
+         href="https://fixcores.com/email"
+         target="_blank" rel="noopener noreferrer">
+        <div>
+          <div class="category">04 / Email Marketing</div>
+          <h3>Email Marketing Copy</h3>
+          <p>
+            Email campaigns and sequences designed to build
+            relationships, nurture prospects, and encourage action.
+          </p>
+        </div>
+        <div class="portfolio-link">
+          <span>View Project</span><span>↗</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-box reveal">
+      <span class="section-label">Start A Conversation</span>
+
+      <h2 class="section-title">
+        Have An Offer Worth Selling?
+      </h2>
+
+      <p>
+        Let's discuss your audience, your offer, and how
+        strategic copywriting can support your next move.
+      </p>
+
+      <div class="contact-actions">
+        <a class="btn btn-primary"
+           href="https://wa.me/212716519403"
+           target="_blank" rel="noopener noreferrer">
+          WhatsApp ↗
+        </a>
+
+        <a class="btn btn-outline"
+           href="mailto:contact@fixcores.com?subject=Copywriting%20Project">
+          Email Me ↗
+        </a>
+      </div>
+
+      <div class="contact-details">
+        <p>
+          Email:
+          <a href="mailto:contact@fixcores.com">
